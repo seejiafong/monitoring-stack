@@ -1,0 +1,17 @@
+      56
+	raft:join"G{"name":"172.17.0.2:9333.19333","connectionString":"172.17.0.2:19333"}
+      33
+MaxVolumeId""{"maxVolumeId":0,"topologyId":""}
+       c
+raft:nop      57
+MaxVolumeId"F{"maxVolumeId":0,"topologyId":"7c2ddf46-a791-455a-8692-f1a12cce3c2f"}
+      57
+MaxVolumeId"F{"maxVolumeId":1,"topologyId":"7c2ddf46-a791-455a-8692-f1a12cce3c2f"}
+      57
+MaxVolumeId"F{"maxVolumeId":2,"topologyId":"7c2ddf46-a791-455a-8692-f1a12cce3c2f"}
+      57
+MaxVolumeId"F{"maxVolumeId":3,"topologyId":"7c2ddf46-a791-455a-8692-f1a12cce3c2f"}
+      57
+MaxVolumeId"F{"maxVolumeId":4,"topologyId":"7c2ddf46-a791-455a-8692-f1a12cce3c2f"}
+      57
+	MaxVolumeId"F{"maxVolumeId":5,"topologyId":"7c2ddf46-a791-455a-8692-f1a12cce3c2f"}

@@ -1,0 +1,15 @@
+meta {
+  name: loki-get
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8777/loki/api/v1/status/buildinfo
+  body: none
+  auth: inherit
+}
+
+headers {
+  X-Scope-OrgID: abc
+}

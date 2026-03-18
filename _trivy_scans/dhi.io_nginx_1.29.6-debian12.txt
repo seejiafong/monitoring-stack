@@ -1,0 +1,131 @@
+
+Report Summary
+
+┌─────────────────────────────────────────────┬────────────┬─────────────────┬───────────────────┬─────────┐
+│                   Target                    │    Type    │ Vulnerabilities │ Misconfigurations │ Secrets │
+├─────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┼─────────┤
+│ dhi.io/nginx:1.29.6-debian12 (debian 12.13) │   debian   │       25        │         -         │    -    │
+├─────────────────────────────────────────────┼────────────┼─────────────────┼───────────────────┼─────────┤
+│ dhi.io/nginx:1.29.6-debian12                │ dockerfile │        -        │         1         │    -    │
+└─────────────────────────────────────────────┴────────────┴─────────────────┴───────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+dhi.io/nginx:1.29.6-debian12 (debian 12.13)
+===========================================
+Total: 25 (UNKNOWN: 1, LOW: 18, MEDIUM: 4, HIGH: 1, CRITICAL: 1)
+
+┌────────────────┬─────────────────────┬──────────┬──────────────┬───────────────────────┬───────────────┬──────────────────────────────────────────────────────────────┐
+│    Library     │    Vulnerability    │ Severity │    Status    │   Installed Version   │ Fixed Version │                            Title                             │
+├────────────────┼─────────────────────┼──────────┼──────────────┼───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ coreutils      │ CVE-2016-2781       │ LOW      │ will_not_fix │ 9.1-1                 │               │ coreutils: Non-privileged session can escape to the parent   │
+│                │                     │          │              │                       │               │ session in chroot                                            │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2016-2781                    │
+│                ├─────────────────────┤          ├──────────────┤                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2017-18018      │          │ affected     │                       │               │ coreutils: race condition vulnerability in chown and chgrp   │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2017-18018                   │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2025-5278       │          │              │                       │               │ coreutils: Heap Buffer Under-Read in GNU Coreutils sort via  │
+│                │                     │          │              │                       │               │ Key Specification                                            │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2025-5278                    │
+├────────────────┼─────────────────────┤          │              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ dpkg           │ CVE-2025-6297       │          │              │ 1.21.22               │               │ It was discovered that dpkg-deb does not properly sanitize   │
+│                │                     │          │              │                       │               │ directory p ......                                           │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2025-6297                    │
+│                ├─────────────────────┼──────────┤              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2026-2219       │ UNKNOWN  │              │                       │               │ It was discovered that dpkg-deb (a component of dpkg, the    │
+│                │                     │          │              │                       │               │ Debian packa...                                              │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2026-2219                    │
+├────────────────┼─────────────────────┼──────────┤              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ gcc-12-base    │ CVE-2022-27943      │ LOW      │              │ 12.2.0-14+deb12u1     │               │ binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows   │
+│                │                     │          │              │                       │               │ stack exhaustion in demangle_const                           │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2022-27943                   │
+├────────────────┼─────────────────────┼──────────┤              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libc6          │ CVE-2026-0861       │ HIGH     │              │ 2.36-9+deb12u13       │               │ glibc: Integer overflow in memalign leads to heap corruption │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2026-0861                    │
+│                ├─────────────────────┼──────────┤              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2025-15281      │ MEDIUM   │              │                       │               │ glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return    │
+│                │                     │          │              │                       │               │ uninitialized memory                                         │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2025-15281                   │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2026-0915       │          │              │                       │               │ glibc: glibc: Information disclosure via zero-valued network │
+│                │                     │          │              │                       │               │ query                                                        │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2026-0915                    │
+│                ├─────────────────────┼──────────┤              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2010-4756       │ LOW      │              │                       │               │ glibc: glob implementation can cause excessive CPU and       │
+│                │                     │          │              │                       │               │ memory consumption due to...                                 │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2010-4756                    │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2018-20796      │          │              │                       │               │ glibc: uncontrolled recursion in function                    │
+│                │                     │          │              │                       │               │ check_dst_limits_calc_pos_1 in posix/regexec.c               │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2018-20796                   │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2019-1010022    │          │              │                       │               │ glibc: stack guard protection bypass                         │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2019-1010022                 │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2019-1010023    │          │              │                       │               │ glibc: running ldd on malicious ELF leads to code execution  │
+│                │                     │          │              │                       │               │ because of...                                                │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2019-1010023                 │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2019-1010024    │          │              │                       │               │ glibc: ASLR bypass using cache of thread stack and heap      │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2019-1010024                 │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2019-1010025    │          │              │                       │               │ glibc: information disclosure of heap addresses of           │
+│                │                     │          │              │                       │               │ pthread_created thread                                       │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2019-1010025                 │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2019-9192       │          │              │                       │               │ glibc: uncontrolled recursion in function                    │
+│                │                     │          │              │                       │               │ check_dst_limits_calc_pos_1 in posix/regexec.c               │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2019-9192                    │
+├────────────────┼─────────────────────┤          │              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libgcc-s1      │ CVE-2022-27943      │          │              │ 12.2.0-14+deb12u1     │               │ binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows   │
+│                │                     │          │              │                       │               │ stack exhaustion in demangle_const                           │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2022-27943                   │
+├────────────────┼─────────────────────┤          │              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libssl3        │ CVE-2025-27587      │          │              │ 3.0.18-1~deb12u2      │               │ OpenSSL 3.0.0 through 3.3.2 on the PowerPC architecture is   │
+│                │                     │          │              │                       │               │ vulnerable ......                                            │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2025-27587                   │
+├────────────────┼─────────────────────┼──────────┤              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libtinfo6      │ CVE-2023-50495      │ MEDIUM   │              │ 6.4-4                 │               │ ncurses: segmentation fault via _nc_wrap_entry()             │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2023-50495                   │
+│                ├─────────────────────┼──────────┤              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2025-6141       │ LOW      │              │                       │               │ gnu-ncurses: ncurses Stack Buffer Overflow                   │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2025-6141                    │
+├────────────────┼─────────────────────┤          │              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ sysvinit-utils │ TEMP-0517018-A83CE6 │          │              │ 3.06-4                │               │ [sysvinit: no-root option in expert installer exposes        │
+│                │                     │          │              │                       │               │ locally exploitable security flaw]                           │
+│                │                     │          │              │                       │               │ https://security-tracker.debian.org/tracker/TEMP-0517018-A8- │
+│                │                     │          │              │                       │               │ 3CE6                                                         │
+├────────────────┼─────────────────────┤          │              ├───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ tar            │ CVE-2005-2541       │          │              │ 1.34+dfsg-1.2+deb12u1 │               │ tar: does not properly warn the user when extracting setuid  │
+│                │                     │          │              │                       │               │ or setgid...                                                 │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2005-2541                    │
+│                ├─────────────────────┤          │              │                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ TEMP-0290435-0B57B5 │          │              │                       │               │ [tar's rmt command may have undesired side effects]          │
+│                │                     │          │              │                       │               │ https://security-tracker.debian.org/tracker/TEMP-0290435-0B- │
+│                │                     │          │              │                       │               │ 57B5                                                         │
+├────────────────┼─────────────────────┼──────────┼──────────────┼───────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ zlib1g         │ CVE-2023-45853      │ CRITICAL │ will_not_fix │ 1:1.2.13.dfsg-1       │               │ zlib: integer overflow and resultant heap-based buffer       │
+│                │                     │          │              │                       │               │ overflow in zipOpenNewFileInZip4_6                           │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2023-45853                   │
+│                ├─────────────────────┼──────────┼──────────────┤                       ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2026-27171      │ MEDIUM   │ affected     │                       │               │ zlib: zlib: Denial of Service via infinite loop in CRC32     │
+│                │                     │          │              │                       │               │ combine functions...                                         │
+│                │                     │          │              │                       │               │ https://avd.aquasec.com/nvd/cve-2026-27171                   │
+└────────────────┴─────────────────────┴──────────┴──────────────┴───────────────────────┴───────────────┴──────────────────────────────────────────────────────────────┘
+
+dhi.io/nginx:1.29.6-debian12 (dockerfile)
+=========================================
+Tests: 28 (SUCCESSES: 27, FAILURES: 1)
+Failures: 1 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+
+AVD-DS-0026 (LOW): Add HEALTHCHECK instruction in your Dockerfile
+════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+────────────────────────────────────────
+
+

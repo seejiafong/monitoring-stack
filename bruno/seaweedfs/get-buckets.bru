@@ -1,0 +1,20 @@
+meta {
+  name: get-buckets
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8333
+  body: none
+  auth: awsv4
+}
+
+auth:awsv4 {
+  accessKeyId: gaia
+  secretAccessKey: gaia123
+  sessionToken: 
+  service: s3
+  region: us-east-1
+  profileName: 
+}
