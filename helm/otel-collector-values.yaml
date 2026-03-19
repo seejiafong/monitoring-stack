@@ -165,10 +165,6 @@ config:
       limit_percentage: 80
       # By default spike_limit_mib is set to 25% of ".Values.resources.limits.memory"
       spike_limit_percentage: 25
-    # Convert cumulative histograms to delta so Prometheus can scrape
-    cumulative_to_delta: {}
-    # Optional: ensures histograms are exported in a Prometheus-friendly way
-    histogram: {}
   receivers:
     jaeger:
       protocols:
@@ -225,8 +221,6 @@ config:
         processors:
           - memory_limiter
           - batch
-          - cumulative_to_delta
-          - histogram
         receivers:
           - otlp
           # if internalTelemetryViaOTLP.metrics.enabled = true, prometheus receiver will be removed
