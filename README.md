@@ -96,7 +96,7 @@ Port forward the otel /metrics endpoint to localhost:9464/metrics
 kubectl port-forward svc/otel-collector-opentelemetry-collector  9464:9464
 ```
 
-You should see something like the following:
+You should see something like the following:  
 llm_tokens_generated_total{...} 23  
 llm_ttft_milliseconds_bucket{...} 0  
 llm_tokens_per_second_per_second_bucket{...} 0  
@@ -112,7 +112,16 @@ kubectl port-forward svc/prom-prometheus-server 3111:80
 Go under Status > Target Health.  
 Should see otel-collector configured with endpoint http://otel-collector-opentelemetry-collector.default.svc.cluster.local:9464/metrics and state is UP  
 
-2. Go to the Query tab and type "llm"
-The llm related metrics should appear
+2. Go to the Query tab and type "llm"  
+The llm related metrics should appear.  
+  
+You can key in the following to see the values over 5 minutes at the 95th percentile (p95)  
+- 95th percentile (p95) means that 95% of the requests return before this time, and only 5% of requests take slower than that time  
 
+```promql
+histogram_quantile(
+  0.95,
+  sum by (le) (rate(llm_tokens_per_second_per_second_bucket[5m]))
+)
+```
 
