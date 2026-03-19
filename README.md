@@ -125,3 +125,25 @@ histogram_quantile(
 )
 ```
 
+### 3) Viewing in Grafana  
+
+1. Port forward grafana to localhost:3000
+```bash
+kubectl port-forward svc/grafana 3000:80
+```
+
+2. Get Grafana login password:
+```bash
+kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
+
+3. Navigate to localhost:3000 and login
+user: admin
+password: <from Step 2>
+
+4. Left Nav Bar > Dashboards > New > Import
+Drag and drop the dashboard under dashboard/gaia-system-monitoring.json
+
+5. While running the notebook, wait about 5min
+Configure the time interval to "Last 15 mins" and dashboard will refresh
+![alt text](dashboard/Configure-time-interval.png)
